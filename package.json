@@ -1,0 +1,19 @@
+{
+  "name": "geowiki-app",
+  "version": "0.0.0",
+  "description": "The basic app handling for Geowiki Viewer and OpenStreetBrowser",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geowiki-net/geowiki-app.git"
+  },
+  "author": "Stephan Bösch-Plepelits <skunk@xover.mud.at>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/geowiki-net/geowiki-app/issues"
+  },
+  "homepage": "https://github.com/geowiki-net/geowiki-app#readme"
+}
