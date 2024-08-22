@@ -1,4 +1,4 @@
-const Twig = require('twig')
+import Twig from 'twig'
 
 const twigTemplates = {}
 defaultOptions = {
