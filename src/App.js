@@ -2,7 +2,7 @@ import Events from 'events'
 import state from './state'
 import yaml from 'js-yaml'
 import twigGet from './twigGet'
-import initModules from './initModules'
+import initModules from 'geowiki-lib-modules'
 
 /**
  * main Geowiki application

@@ -1,7 +1,7 @@
 {
-  "name": "geowiki-app",
+  "name": "geowiki-lib-app",
   "version": "0.0.0",
-  "description": "The basic app handling for Geowiki Viewer and OpenStreetBrowser",
+  "description": "Basic app handling for Geowiki Viewer and OpenStreetBrowser",
   "main": "src/App.js",
   "sourceType": "module",
   "scripts": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/geowiki-net/geowiki-app#readme",
   "dependencies": {
     "async": "^3.2.6",
+    "geowiki-lib-modules": "github:geowiki-net/geowiki-lib-modules",
     "js-yaml": "^4.1.0",
     "query-string": "^9.1.0",
     "sheet-router": "^4.2.3",
