@@ -44,7 +44,7 @@ class App extends Events {
   // TODO: move to state.js
   getInitState () {
     let initState = state.parse()
-    let defaultState = this.config ? this.config.defaultState ?? {} : {}
+    const defaultState = this.config ? this.config.defaultState ?? {} : {}
 
     if (typeof defaultState === 'string') {
       twigGet(defaultState, { state: initState }, (e, defaultState) => {
