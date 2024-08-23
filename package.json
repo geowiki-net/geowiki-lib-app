@@ -5,6 +5,7 @@
   "main": "src/App.js",
   "sourceType": "module",
   "scripts": {
+    "lint": "standard --fix src/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +25,8 @@
     "query-string": "^6.14.1",
     "sheet-router": "^4.2.3",
     "twig": "^1.17.1"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
   }
 }
