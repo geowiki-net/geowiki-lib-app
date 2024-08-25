@@ -22,6 +22,7 @@
     "async": "^3.2.6",
     "geowiki-lib-modules": "github:geowiki-net/geowiki-lib-modules",
     "js-yaml": "^4.1.0",
+    "modulekit-lang": "github:plepe/modulekit-lang#browserify",
     "query-string": "^6.14.1",
     "sheet-router": "^4.2.3",
     "twig": "^1.17.1"

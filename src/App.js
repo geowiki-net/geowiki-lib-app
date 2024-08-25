@@ -124,7 +124,9 @@ class App extends Events {
   }
 }
 
-App.modules = []
+import lang from './lang'
+App.modules = [lang]
+
 App.addModule = (module) => {
   App.modules.push(module)
 }
