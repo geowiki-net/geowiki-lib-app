@@ -16,7 +16,9 @@ class App extends Events {
     super()
 
     this.state = state
-    this.initModules(() => this.getInitState())
+    global.setTimeout(() => {
+      this.initModules(() => this.getInitState())
+    }, 0)
   }
 
   initModules (callback) {
