@@ -16,9 +16,6 @@ class App extends Events {
     super()
 
     this.state = state
-    global.setTimeout(() => {
-      this.initModules(() => this.getInitState())
-    }, 0)
   }
 
   initModules (callback) {
@@ -27,7 +24,6 @@ class App extends Events {
         global.alert(err.message)
       }
 
-      this.loadCssFiles()
       callback()
     })
   }
