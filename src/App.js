@@ -56,14 +56,10 @@ class App extends Events {
           return global.alert(e.message)
         }
 
-        initState = { ...defaultState, ...initState }
-
-        this.init(initState)
+        return { ...defaultState, ...initState }
       })
     } else {
-      initState = { ...defaultState, ...initState }
-
-      this.init(initState)
+      return { ...defaultState, ...initState }
     }
   }
 
