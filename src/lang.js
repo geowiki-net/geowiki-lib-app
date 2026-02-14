@@ -7,7 +7,7 @@ module.exports = {
 }
 
 function appInit (app, callback) {
-  modulekitLang.set(app.config.lang, {}, callback)
+  modulekitLang.set(app.config ? app.config.lang : 'en', {}, callback)
 
   app.on('state-apply', state => {
     if (state.lang && state.lang !== app.options.lang) {
