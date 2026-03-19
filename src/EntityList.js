@@ -1,5 +1,5 @@
 import Events from 'events'
-import isRelativePath from './isRelativePath'
+import isRelativePath from './isRelativePath.js'
 
 /**
  * @typedef EntityList#file
@@ -138,4 +138,4 @@ class EntityList extends Events {
   }
 }
 
-module.exports = EntityList
+export default EntityList
