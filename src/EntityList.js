@@ -81,7 +81,7 @@ class EntityList extends Events {
                 global.alert(err.message)
               })
           } else {
-            const url = (isRelativePath(item.url) ? this.app.config.dataDirectory + '/' : '') + item.url
+            const url = (isRelativePath(item.url) ? './' : '') + item.url
 
             this.resolveItem(item, url)
               .then(() => resolve(item))
