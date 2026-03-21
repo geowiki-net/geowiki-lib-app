@@ -1,3 +1,3 @@
 module.exports = function isRelativePath (str) {
-  return !str.match(/^(\/|https?:\/\/)/)
+  return !str.match(/^([a-z]+?:\/\/)/)
 }
