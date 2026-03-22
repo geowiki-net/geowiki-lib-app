@@ -70,7 +70,7 @@ class EntityList extends Events {
    */
   get (id) {
     return new Promise((resolve, reject) => {
-      this._find(id).then(item => {
+      this._get_or_find(id).then(item => {
         if (!item.data) {
           if (item.loader) {
             item.loader()
@@ -94,6 +94,31 @@ class EntityList extends Events {
     })
   }
 
+  // either _get directly or _find in the list of entities
+  _get_or_find (id) {
+    return new Promise((resolve, reject) => {
+      const promises = []
+
+      /**
+       * find entity with the specified ID
+       * @event EntityList#get-entity
+       * @param {string} id - id of the entity we are looking for
+       * @param {Promise[]} promises - if the module might return a valid entity list for the specified id, then push a promise to this array. Only the first promise to resolve will be used.
+       */
+      this.emit('get-entity', id, promises)
+
+      Promise.any(promises)
+        .then(item => {
+          resolve(item)
+        })
+        .catch(() => { // no entity? add URL from id
+          this._find(id)
+            .then(item => resolve(item))
+            .catch(err => reject(err))
+        })
+    })
+  }
+
   _find (id) {
     return new Promise((resolve, reject) => {
       this.list().then(list => {
@@ -110,12 +135,8 @@ class EntityList extends Events {
         }
 
         const promises = []
-        /**
-         * find entity with the specified ID
-         * @event EntityList#get-entity
-         * @param {string} id - id of the entity we are looking for
-         * @param {Promise[]} promises - if the module might return a valid entity list for the specified id, then push a promise to this array. Only the first promise to resolve will be used.
-         */
+
+        // load entity via 'get-entity'
         this.emit('get-entity', id, promises)
 
         Promise.any(promises)
